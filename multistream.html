@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Live SeuCreYsonReborn + Chats</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      background: #0e0e0e;
+      color: white;
+      font-family: Arial, sans-serif;
+    }
+
+    header {
+      background: #111;
+      padding: 10px;
+      text-align: center;
+      font-weight: bold;
+      font-size: 1.2em;
+    }
+
+    #main {
+      flex: 1;
+      display: flex;
+      overflow: hidden;
+    }
+
+    #video {
+      flex: 2;
+      background: black;
+    }
+
+    #chats {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      border-left: 2px solid #222;
+    }
+
+    .chat {
+      flex: 1;
+      border-top: 1px solid #222;
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    @media (max-width: 900px) {
+      #main {
+        flex-direction: column;
+      }
+      #chats {
+        flex-direction: row;
+        height: 300px;
+      }
+      .chat {
+        flex: 1;
+        border-top: none;
+        border-right: 1px solid #222;
+      }
+      .chat:last-child {
+        border-right: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>Live SeuCreYsonReborn + Chats</header>
+
+  <div id="main">
+    <!-- PLAYER KICK -->
+    <div id="video">
+      <iframe
+        src="https://player.kick.com/seucreysonreborn"
+        allowfullscreen
+        allow="autoplay; encrypted-media"
+      ></iframe>
+    </div>
+
+    <!-- CHATS -->
+    <div id="chats">
+      <!-- Kick Chat -->
+      <div class="chat">
+        <iframe
+          src="https://kick.com/seucreysonreborn/chatroom"
+          allow="autoplay; encrypted-media"
+        ></iframe>
+      </div>
+      <!-- Twitch Chat (Popout) -->
+      <div class="chat">
+        <iframe
+          scrolling="yes"
+          id="seucreysonreborn"
+          src="https://www.twitch.tv/embed/seucreysonreborn/chat?parent=127.0.0.1"
+          height="500"
+          width="350"
+          frameborder="0"
+        ></iframe> </div>
+    </div>
+  </div>
+</body>
+</html>
